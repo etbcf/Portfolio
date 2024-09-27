@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main class="main main--project">
+        <div>
+            <img class="hero" src="{{ url_for("static", filename=project["hero"]) }}"
+                 alt="A hand holding a pen, about to write something in a project planner.">
+
+            <article class="project">
+                <article class="project__content">
+                    <h2 class="project__heading">{{ project["name"] }}</h2>
+
+                    <p>
+                        Olá, eu sou o Eduardo! Adoro programar e partilhar o que faço. Comecei a programar
+                        quando tinha os meus 30 e desde aí não parei, comprei livros, fiz cursos (presenciais e
+                        online) e aprendi muito ao longo do caminho. Agora quero por em prática tudo.
+                    </p>
+                    <p>
+                        Programar é uma atividade recompensadora, mas exige prática e trabalho, só assim
+                        consegue-se ver o desenho todo. Se por acaso ajudar alguém com isso, sentir-me-ia
+                        satisfeito.
+                    </p>
+                </article>
+
+                <section>
+                    <article class="project__meta-group">
+                        <h3 class="project__heading project__heading--meta">Tecnologias usadas</h3>
+
+                        <ul class="technology-list">
+                            <li class="technology-list__item">Python</li>
+                            <li class="technology-list__item">HTML</li>
+                            <li class="technology-list__item">CSS</li>
+                        </ul>
+                    </article>
+
+                    <a class="cta" href="{{ project["prod"] }}">
+                        <img class="cta__icon" src="{{ url_for("static", filename="images/pointer.svg") }}"
+                             alt="Pointer">
+                        Ver em produção!
+                    </a>
+                </section>
+            </article>
+        </div>
+    </main>
+{% endblock %}
